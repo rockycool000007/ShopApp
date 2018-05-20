@@ -1,18 +1,19 @@
 import React from 'react';
 
-import Home from './src/Home/Home'
-import Product from './src/Product/Product'
-import Account from './src/Account/Account'
-import Settings from './src/Settings/Settings'
-import Cart from './src/Cart/Cart'
+import Home from './src/Pages/Home/Home'
+import Product from './src/Pages/Product/Product'
+import Account from './src/Pages/Account/Account'
+import Settings from './src/Pages/Settings/Settings'
+import Cart from './src/Pages/Cart/Cart'
 
 import { createBottomTabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Font } from "./src/Utils/Font";
 
 export default createBottomTabNavigator({
   Home: Home,
   Cart: Cart,
-  Account: Account, 
+  Account: Account,
   Settings: Settings,
 }, {
     navigationOptions: ({ navigation }) => ({
@@ -25,7 +26,7 @@ export default createBottomTabNavigator({
           iconName = `ios-options${focused ? '' : '-outline'}`;
         } else if (routeName === 'Account') {
           iconName = `ios-person${focused ? '' : '-outline'}`;
-        }else if (routeName === 'Cart') {
+        } else if (routeName === 'Cart') {
           iconName = `ios-cart${focused ? '' : '-outline'}`;
         }
 
@@ -38,3 +39,7 @@ export default createBottomTabNavigator({
     },
   });
 
+Expo.Font.loadAsync({
+  'Roboto': require('native-base/Fonts/Roboto.ttf'),
+  'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+});

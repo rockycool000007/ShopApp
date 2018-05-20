@@ -1,14 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
 
-export default class Home extends React.Component {
+export default class Product extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Settings Page</Text>
-                <Text>Changes you make will automatically reload.</Text>
-                <Text>Shake your phone to open the developer menu.</Text>
+                <Text>PRODUCT PAGE</Text>
             </View>
         );
     }
@@ -22,3 +19,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+

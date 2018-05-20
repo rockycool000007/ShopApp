@@ -1,9 +1,10 @@
 import React from 'react';
-import Settings from './Settings';
+import Cart from './Cart';
+import Header from "../../Components/Header/Header";
 
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
-    const rendered = renderer.create(<Settings />).toJSON();
+    const rendered = renderer.create(<Cart />).toJSON();
     expect(rendered).toBeTruthy();
 });
