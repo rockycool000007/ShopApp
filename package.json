@@ -21,7 +21,13 @@
   "dependencies": {
     "@appbaseio/reactivesearch-native": "^0.7.1",
     "expo": "^27.0.1",
+    "pre-commit": "^1.2.2",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
-  }
+    "react-native": "~0.55.2",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-navigation": "^2.0.1"
+  },
+  "pre-commit": [
+    "test"
+  ]
 }

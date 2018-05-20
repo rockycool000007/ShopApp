@@ -1,23 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import Home from './src/Home/Home'
+import Product from './src/Product/Product'
+import Account from './src/Account/Account'
+import Settings from './src/Settings/Settings'
+import Cart from './src/Cart/Cart'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { createBottomTabNavigator } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+export default createBottomTabNavigator({
+  Home: Home,
+  Cart: Cart,
+  Account: Account, 
+  Settings: Settings,
+}, {
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = `ios-home${focused ? '' : '-outline'}`;
+        } else if (routeName === 'Settings') {
+          iconName = `ios-options${focused ? '' : '-outline'}`;
+        } else if (routeName === 'Account') {
+          iconName = `ios-person${focused ? '' : '-outline'}`;
+        }else if (routeName === 'Cart') {
+          iconName = `ios-cart${focused ? '' : '-outline'}`;
+        }
+
+        return <Ionicons name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  });
+
